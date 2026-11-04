@@ -1,16 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ra3_inscripcionextraescolaresampliacion_danieldr.PrimaryController">
+<VBox maxWidth="972.0" prefHeight="511.0" prefWidth="791.0" style="-fx-border-color: #68452F; -fx-border-radius: 8; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.ra3_inscripcionextraescolaresampliacion_danieldr.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <Label alignment="TOP_LEFT" prefHeight="28.0" prefWidth="832.0" style="-fx-background-color: #68452F; -fx-font-weight: bold; -fx-background-radius: 6;" text="Inscripción a actividades extraescolares" textFill="WHITE">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="15.0" top="4.0" />
+         </padding>
+      </Label>
+      <VBox prefHeight="166.0" prefWidth="655.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="655.0">
+               <children>
+                  <Label style="-fx-font-weight: bold; -fx-background-color: transparent;" text="Nombre del alumno">
+                     <padding>
+                        <Insets left="25.0" top="25.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="NombreAlumno" onAction="#alPulsar" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #5c3a2a; -fx-border-radius: 3; -fx-background-radius: 3;">
+                     <HBox.margin>
+                        <Insets left="30.0" top="22.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="10.0" style="-fx-font-weight: bold; -fx-background-color: transparent;" text="Lista de inscritos">
+                     <padding>
+                        <Insets left="50.0" top="25.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="105.0" prefWidth="811.0">
+               <children>
+                  <Label fx:id="Curso" style="-fx-font-weight: bold; -fx-background-color: transparent;" text="Curso">
+                     <padding>
+                        <Insets left="25.0" top="25.0" />
+                     </padding>
+                  </Label>
+                  <ComboBox fx:id="ComboboxCurso" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #5c3a2a; -fx-border-radius: 3; -fx-background-radius: 3;">
+                     <HBox.margin>
+                        <Insets left="110.0" top="22.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <ListView fx:id="ListaInscritos" prefHeight="105.0" prefWidth="379.0" style="-fx-border-width: 1; -fx-border-color: #5c3a2a; -fx-border-radius: 3; -fx-background-radius: 3;">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </ListView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <ScrollPane fx:id="PanelScroll" prefHeight="216.0" prefWidth="731.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </VBox.margin>
+         <content>
+            <VBox prefHeight="217.0" prefWidth="731.0" style="-fx-border-color: #9DBF9F; -fx-border-width: 2; -fx-border-radius: 3; -fx-background-color: #F6F3EF;">
+               <children>
+                  <GridPane prefHeight="142.0" prefWidth="701.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label style="-fx-font-weight: bold;" text="Actividad" textFill="#5c3a2a">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <RadioButton fx:id="Robotica" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Robótica" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Actividades" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="Ajedrez" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Ajedrez" toggleGroup="$Actividades" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Pintura" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Pintura" toggleGroup="$Actividades" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Idiomas" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Idiomas" toggleGroup="$Actividades" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <Label style="-fx-font-weight: bold;" text="Turno" textFill="#5c3a2a" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <RadioButton fx:id="LunesMiercoles" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Lun-Mié 16:00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Turnos" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="MartesJueves" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Mar-Jue 16:00" toggleGroup="$Turnos" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Viernes" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Viernes 16:00" toggleGroup="$Turnos" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Sabado" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Sabado 10:00" toggleGroup="$Turnos" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <Label style="-fx-font-weight: bold;" text="Nivel" textFill="#5c3a2a" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="Pago" textFill="#5c3a2a" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="Opciones" textFill="#5c3a2a" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" top="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <RadioButton fx:id="Iniciacion" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Iniciación" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Niveles" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="Intermedio" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Intermedio" toggleGroup="$Niveles" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Avanzado" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Avanzado" toggleGroup="$Niveles" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Mensual" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Mensual" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Pagos" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="Trimestral" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Trimestral" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="Anual" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-focus-color: #5c3a2a; -fx-outer-border: #5c3a2a; -fx-border-width: 2; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Anual" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <CheckBox fx:id="Comedor" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-outer-border: #5c3a2a; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Comedor" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="Transporte" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-outer-border: #5c3a2a; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Transporte" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="SeguroEscolar" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-outer-border: #5c3a2a; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Seguro escolar" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="MaterialIncluido" mnemonicParsing="false" style="-fx-background-insets: 0; -fx-outer-border: #5c3a2a; -fx-mark-color: #B5473A; -fx-body-color: #FFFFFF;" text="Material incluido" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="59.0" prefWidth="770.0">
+                     <children>
+                        <Label style="-fx-font-weight: bold;" text="Horas semanales" textFill="#5c3a2a">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Slider fx:id="Deslizador" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" prefHeight="14.0" prefWidth="292.0" showTickLabels="true" showTickMarks="true" style="-fx-outer-border: #B5473A; -fx-control-inner-background: #B5473A; -fx-color: #B5473A; -fx-faint-focus-color: transparent; -fx-focus-color: transparent; -fx-background-color: transparent;">
+                           <HBox.margin>
+                              <Insets left="40.0" top="23.0" />
+                           </HBox.margin>
+                        </Slider>
+                        <Label fx:id="horasBind" style="-fx-font-weight: bold;" text="1H" textFill="#b5473a">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox prefHeight="72.0" prefWidth="770.0">
+         <children>
+            <HBox prefHeight="53.0" prefWidth="456.0">
+               <children>
+                  <Button fx:id="Añadir" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: #5c3a2a;" text="Añadir" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Buscar" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: transparent; -fx-background-color: transparent; -fx-border-color: #5c3a2a; -fx-border-radius: 3;" text="Buscar" textFill="#5c3a2a">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Eliminar" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: transparent; -fx-background-color: transparent; -fx-border-color: #5c3a2a; -fx-border-radius: 3;" text="Eliminar" textFill="#5c3a2a">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Renombrar" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: transparent; -fx-background-color: transparent; -fx-border-color: #5c3a2a; -fx-border-radius: 3;" text="Renombrar..." textFill="#5c3a2a">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="72.0" prefWidth="332.0">
+               <children>
+                  <Button fx:id="Cancelar" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: transparent; -fx-background-color: transparent; -fx-border-color: #5c3a2a; -fx-border-radius: 3;" text="Cancelar" textFill="#5c3a2a">
+                     <HBox.margin>
+                        <Insets right="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Salir" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="99.0" style="-fx-font-weight: bold; -fx-background-color: transparent; -fx-background-color: transparent; -fx-border-color: #5c3a2a; -fx-border-radius: 3;" text="Salir" textFill="#5c3a2a">
+                     <HBox.margin>
+                        <Insets right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
 </VBox>
